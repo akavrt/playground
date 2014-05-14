@@ -1,8 +1,5 @@
 package com.akavrt.matrix;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * User: akavrt
  * Date: 14.05.14
@@ -11,7 +8,7 @@ import java.util.List;
 public class MatrixHelper {
 
     /**
-     * Prints matrix of size [2n-1] x [2n-1]
+     * Prints matrix of size [2n-1] x [2n-1].
      */
     public static void printMegaMatrix(int n) {
         if (n < 2) {
@@ -19,32 +16,31 @@ public class MatrixHelper {
         }
 
         int length = 2 * n - 1;
-        List<String> holder = new ArrayList<String>();
-        for (int i = 0; i < length / 2 + 1; i++) {
-            StringBuilder builder = new StringBuilder();
+        int center = length / 2 + 1;
+        int left = center - 1;
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < length; i++) {
+            left = i < center
+                    ? left - 1
+                    : left + 1;
+
             int value = 0;
             for (int j = 0; j < length; j++) {
-                if (j < n - 1 - i || j > n - 1 + i) {
+                if (j <= left || j >= length - left - 1) {
                     builder.append("*");
                 } else {
-                    builder.append(j <= n - 1 ? ++value : --value);
+                    builder.append(j <= n - 1
+                                           ? ++value
+                                           : --value);
                 }
             }
-
-            holder.add(builder.toString());
+            builder.append("\n");
         }
 
-        for (String line : holder) {
-            System.out.println(line);
-        }
-
-        for (int i = holder.size() - 2; i >= 0 ; i--) {
-            System.out.println(holder.get(i));
-        }
+        System.out.println(builder.toString());
     }
 
     public static void main(String[] args) {
-        printMegaMatrix(4);
+        printMegaMatrix(8);
     }
-
 }
