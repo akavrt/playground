@@ -4,7 +4,8 @@ package com.akavrt.matrix;
  * @author Victor Balabanov <akavrt@gmail.com>
  */
 public class MatrixHelper {
-
+    private static final int DEFAULT_SIZE = 7;
+    
     /**
      * Prints matrix of size [2n-1] x [2n-1].
      */
@@ -29,6 +30,7 @@ public class MatrixHelper {
                     builder.append(j <= n - 1 ? ++value : --value);
                 }
             }
+
             builder.append("\n");
         }
 
@@ -36,6 +38,15 @@ public class MatrixHelper {
     }
 
     public static void main(String[] args) {
-        printMegaMatrix(9);
+        int size = DEFAULT_SIZE;
+        if (args.length > 0) {
+            try {
+                size = Integer.parseInt(args[0]);
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        }
+            
+        printMegaMatrix(size);
     }
 }
