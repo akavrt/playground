@@ -1,9 +1,7 @@
 package com.akavrt.matrix;
 
 /**
- * User: akavrt
- * Date: 14.05.14
- * Time: 13:06
+ * @author Victor Balabanov <akavrt@gmail.com>
  */
 public class MatrixHelper {
 
