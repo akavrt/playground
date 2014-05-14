@@ -8,7 +8,7 @@ Signature of method:
 ```java
 void printMegaMatrix(int n)
 ```
-This method should print to the screen matrix with the size [2n-1] x [2n-1].
+This method should print to the screen matrix of the size N x N, where N = 2 * n - 1.
 
 Examples:
 
