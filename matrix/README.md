@@ -3,22 +3,22 @@ MegaMatrix
 
 Exercise:
 
-Please write code of java method which print matrix.
-
-Signature of method: `void printMegaMatrix(int n)`.
-Method should print to screen matrix with the size [2n-1] x [2n-1].
+Please implement in Java a method which prints matrix of special structure.
+Signature of method: 
+```java
+void printMegaMatrix(int n)
+```
+This method should print to the screen matrix with the size [2n-1] x [2n-1].
 
 Examples:
 
 ```
 n = 2
-
 *1*
 121
 *1*
 
 n = 3
-
 **1**
 *121*
 12321
@@ -26,7 +26,6 @@ n = 3
 **1**
 
 n = 5
-
 ****1****
 ***121***
 **12321**
