@@ -36,6 +36,6 @@ public class MatrixHelper {
     }
 
     public static void main(String[] args) {
-        printMegaMatrix(7);
+        printMegaMatrix(9);
     }
 }
