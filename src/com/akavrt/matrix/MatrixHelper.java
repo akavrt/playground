@@ -20,18 +20,15 @@ public class MatrixHelper {
         int left = center - 1;
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < length; i++) {
-            left = i < center
-                    ? left - 1
-                    : left + 1;
+            int shift = i < center ? - 1 : 1;
+            left += shift;
 
             int value = 0;
             for (int j = 0; j < length; j++) {
                 if (j <= left || j >= length - left - 1) {
                     builder.append("*");
                 } else {
-                    builder.append(j <= n - 1
-                                           ? ++value
-                                           : --value);
+                    builder.append(j <= n - 1 ? ++value : --value);
                 }
             }
             builder.append("\n");
@@ -41,6 +38,6 @@ public class MatrixHelper {
     }
 
     public static void main(String[] args) {
-        printMegaMatrix(8);
+        printMegaMatrix(7);
     }
 }
